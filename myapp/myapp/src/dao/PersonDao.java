@@ -26,43 +26,58 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PersonDao implements IPersonDao{
 
-	@Override
-	public Collection<Group> findAllGroups() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Collection<Person> findAllPersons(long groupId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void savePerson(Person p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void saveGroup(Group g) {
-		// TODO Auto-generated method stub
-		
-	}
     @PersistenceContext(type = PersistenceContextType.TRANSACTION)
     EntityManager em;
 	private EntityManagerFactory factory = null;
+	/**************************** Group ****************************************/
+   
+	public Group addGroup(Group g) {
+        em.persist(g);
+        System.err.println("addGroup witdh id=" + g.getId());
+        return (g);
+    }
+    
+	public Group findGroup(long id) {
+		Group g;
+		g = em.find(Group.class, id);
+		return g;
+	}
+	
+	public Group updateGroup(Group g) {
+		g = em.merge(g);
+		System.err.println("updateGroup witdh id=" + g.getId());
+		return g;
+	}
+	
+	public Group removeGroup(long id) {
+		Group g;
+		g = em.find(Group.class, id);
+		em.remove(g);
+		System.err.println("removeGroup witdh id=" + g.getId());
+		return g;
+	}
+	
+	@Override
+	public Collection<Group> findAllGroups(){
+    	String query = "SELECT g FROM Group g";
+        TypedQuery<Group> q = em.createQuery(query, Group.class);
+        return q.getResultList();
+	}
+	
+	@Override
+	public void saveGroup(Group g) {
+		if(findGroup(g.getId()) == null)
+			updateGroup(g);
+		else
+			addGroup(g);
+		
+	}
 
+    /**************************** Person ***************************************/
     public Person addPerson(Person p) {
         em.persist(p);
         System.err.println("addPerson witdh id=" + p.getId());
         return (p);
-    }
-    
-    public Person findPerson(long id) {
-    	Person p;
-    	p = em.find(Person.class,id);
-    	return p;
     }
     
     public Person updatePerson(Person p) {
@@ -78,13 +93,7 @@ public class PersonDao implements IPersonDao{
     	System.err.println("removePerson witdh id=" + p.getId());
     	return p;
     }
-   
-    public List<Person> findAllPersons(){
-    	String query = "SELECT p FROM Person p";
-        TypedQuery<Person> q = em.createQuery(query, Person.class);
-        return q.getResultList();
-    }
-    
+
     public synchronized void changerFirstName(long id, String name) {
  	   String string = "Marie";
  	   Calendar date = Calendar.getInstance();
@@ -100,5 +109,27 @@ public class PersonDao implements IPersonDao{
                 "SELECT p FROM Person p WHERE p.firstName LIKE :firstName", Person.class);
             return query.setParameter("firstName", firstName).getResultList();
     }
-
+    
+    @Override
+    public  Collection<Person> findAllPersons(long groupId){
+    	String query = "SELECT p FROM Person p where group = groupId";
+        TypedQuery<Person> q = em.createQuery(query, Person.class);
+        return q.getResultList();
+    }
+    
+	@Override
+	public void savePerson(Person p) {
+		if(findPerson(p.getId()) == null )
+			updatePerson(p);
+		else
+			addPerson(p);
+	}
+	
+    @Override
+    public Person findPerson(long id) {
+    	Person p;
+    	p = em.find(Person.class,id);
+    	return p;
+    }
+    
 }

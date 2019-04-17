@@ -11,18 +11,22 @@ public class Person implements HttpSessionBindingListener{
     private String firstName;
     private String birthday;
     private String mail;
+    private Group group;
     public Person() {
-    	initPerson(1,"Nicolas","a","00/00/0000","Nicolas@gmail.com");
+    	Group group = new Group("Test",0);
+    	initPerson(1,"Nicolas","a","00/00/0000","Nicolas@gmail.com",group);
     }
     public Person(String name, Date birhtday) {
-    	initPerson(1,name,name,birthday,name);
+    	Group group = new Group("Test",0);
+    	initPerson(1,name,name,birthday,name, group);
     }
-    public void initPerson(int id, String name, String firstName, String birthday, String mail ) {
+    public void initPerson(int id, String name, String firstName, String birthday, String mail, Group group ) {
     	this.id = id;
     	this.name = name;
     	this.firstName = firstName;
     	this.birthday = birthday;
     	this.mail = mail;
+    	this.group = group;
     }
     
 	public long getId() {

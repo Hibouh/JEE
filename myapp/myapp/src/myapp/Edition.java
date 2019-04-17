@@ -41,7 +41,8 @@ public class Edition extends HttpServlet {
 			  
 			   /*Création d'une nouvelle personne et remplacement */
 			   Person p = new Person();
-			   p.initPerson(Integer.parseInt(id), name, firstName,birthday,mail);
+			   Group group = new Group("Test",0);
+			   p.initPerson(Integer.parseInt(id), name, firstName,birthday,mail, group);
 			   request.getSession().setAttribute("person", p);
 			   System.out.println(p);
 			   
