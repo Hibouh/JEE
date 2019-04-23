@@ -1,0 +1,18 @@
+/*C6*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C7*/SET SCHEMA PUBLIC
+\u000a    drop table if exists Movie CASCADE 
+\u000a    drop table if exists TPerson CASCADE 
+\u000a    drop sequence hibernate_sequence if exists
+DISCONNECT
+/*C8*/SET SCHEMA PUBLIC
+create sequence hibernate_sequence start with 1 increment by 1
+\u000a    create table Movie (\u000a       id bigint not null,\u000a        name varchar(150) not null,\u000a        primary key (id)\u000a    )
+\u000a    create table TPerson (\u000a       id bigint not null,\u000a        birth_day date,\u000a        first_name varchar(200) not null,\u000a        version bigint not null,\u000a        primary key (id)\u000a    )
+\u000a    alter table TPerson \u000a       add constraint UK58gbcq3p83fgxehg706edmoun unique (first_name, birth_day)
+DISCONNECT
+/*C9*/SET SCHEMA PUBLIC
+\u000a    drop table if exists Movie CASCADE 
+\u000a    drop table if exists TPerson CASCADE 
+\u000a    drop sequence hibernate_sequence if exists
+DISCONNECT
