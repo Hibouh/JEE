@@ -14,6 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import myapp.model.Group;
 import myapp.model.Person;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -47,7 +48,7 @@ public class TestDao {
 	   }
 
 	   @Test
-	   public void testUpdatePerson2() {
+	   public void testUpdatePerson() {
 		   String string = "Marie";
 		   Calendar date = Calendar.getInstance();
 		   Person pers = new Person ("Nicola",date.getTime());
@@ -86,7 +87,47 @@ public class TestDao {
 		   dao.removePerson(p.getId());
 		   dao.removePerson(p0.getId());
 	   }
+	   
 	   @Test
+	   public void testAddGroup() {
+		   Group g = new Group();
+		   g.setName("Test");
+		   assertEquals("Test",g.getName());
+	   }
+	   
+	   @Test
+	   public void testFindGroup() {
+		   Group g = new Group();
+		   g.setName("Test");
+		   g = dao.addGroup(g);
+		   Group res = dao.findGroup(g.getId());
+		   assertEquals(g.getId(),res.getId());
+	   }
+	   
+	   @Test
+	   public void testUpdateGroup() {
+		   String test = "test1";
+		   Group g = new Group();
+		   g.setName("Test");
+		   g = dao.addGroup(g);
+		   g = dao.findGroup(g.getId());
+		   g.setName(test);
+		   g = dao.updateGroup(g);
+		   assertEquals(test,g.getName());
+	   }
+	   
+	   @Test 
+	   public void testRemoveGroup() {
+		   long id;
+		   Group g = new Group();
+		   g.setName("Test");
+		   g = dao.addGroup(g);
+		   id = g.getId();
+		   dao.removeGroup(id);
+		   assertEquals(dao.findGroup(id),null);
+	   }
+	   /*@Test
+	   }
 	   public void TestchangeFirstName() {
 		   int nbThread = 2;
 		   String name = "Pierre";
@@ -105,5 +146,5 @@ public class TestDao {
 	           try{ t[i].join(); } catch(InterruptedException e){e.printStackTrace();}
 	       }
 
-	   }
+	   }*/
 }

@@ -1,13 +1,17 @@
 package myapp.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PostUpdate;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -34,6 +38,17 @@ public class Group implements Serializable {
 	nullable = false, unique = true)
 	private String name;
 	
+	@OneToMany(mappedBy="group",cascade=CascadeType.ALL)
+	private Set<Person> persons = new HashSet<Person>();
+	  
+	public Set<Person> getPersons() {
+		return persons;
+	}
+
+	public void setPersons(Set<Person> persons) {
+		this.persons = persons;
+	}
+
 	public String getName() {
 		return name;
 	}

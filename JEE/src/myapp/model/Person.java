@@ -6,11 +6,13 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.PostUpdate;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -64,6 +66,9 @@ public class Person implements Serializable {
    @Temporal(TemporalType.DATE)
    @Column(name = "birth_day")
    private Date birthDay;
+   
+   @ManyToOne(cascade=CascadeType.ALL)
+   private Group group;
 
    @Version()
    private long version = 0;
@@ -134,5 +139,12 @@ public class Person implements Serializable {
       this.version = version;
    }
    
+   public Group getGroup() {
+	return group;
+	}
+
+	public void setGroup(Group group) {
+	this.group = group;
+	}
 
 }
