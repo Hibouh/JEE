@@ -1,0 +1,7 @@
+com\annuaire\controller\HomeController.class
+com\annuaire\dao\IPersonDao.class
+com\annuaire\dao\SpringConfiguration.class
+com\annuaire\dao\DaoPerson.class
+com\annuaire\Application.class
+com\annuaire\model\Group.class
+com\annuaire\model\Person.class
