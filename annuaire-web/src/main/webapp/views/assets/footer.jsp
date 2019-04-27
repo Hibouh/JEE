@@ -1,4 +1,4 @@
-		<div id="copyleft" class="text-center">développé par Nicolas Léotier</div>
+		<div id="copyleft" class="text-center">développé par Dan et Nicolas</div>
     </div>
 </div>
 <!-- /container -->
