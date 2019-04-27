@@ -13,20 +13,20 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Gestionnaire d'annuaire pour l'université d'Aix-Marseille" />
-    <meta name="author" content="Nicolas Léotier" />
+    <meta name="description" content="Gestionnaire d'annuaire" />
+    <meta name="author" content="Dan et Nicolas" />
 
     <title>Annuaire</title>
     
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
   	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons" />
 
-    <link rel="stylesheet" type="text/css" href="${contextPath}/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="${contextPath}/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="${contextPath}/css/material.css" />
-    <link rel="stylesheet" type="text/css" href="${contextPath}/css/datetimepicker.css" />
- 	<link rel="stylesheet" type="text/css" href="${contextPath}/css/ripples.min.css" />
- 	<link rel="stylesheet" type="text/css" href="${contextPath}/DataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="${contextPath}/webapp/ressources/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="${contextPath}/webapp/ressources/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="${contextPath}/webapp/ressources/css/material.css" />
+    <link rel="stylesheet" type="text/css" href="${contextPath}/webapp/ressources/css/datetimepicker.css" />
+ 	<link rel="stylesheet" type="text/css" href="${contextPath}/webapp/ressources/css/ripples.min.css" />
+ 	<link rel="stylesheet" type="text/css" href="${contextPath}/webapp/ressources/DataTables/datatables.min.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

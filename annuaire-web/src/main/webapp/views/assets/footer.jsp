@@ -2,13 +2,13 @@
     </div>
 </div>
 <!-- /container -->
-<script src="${contextPath}/js/jquery.min.js"></script>
-<script src="${contextPath}/js/moment.js"></script>
-<script src="${contextPath}/js/bootstrap.min.js"></script>
-<script src="${contextPath}/js/material.min.js"></script>
-<script src="${contextPath}/js/datetimepicker.js"></script>
-<script src="${contextPath}/js/ripples.min.js"></script>
-<script src="${contextPath}/DataTables/datatables.min.js"></script>
+<script src="${contextPath}/webapp/ressources/js/jquery.min.js"></script>
+<script src="${contextPath}/webapp/ressources/js/moment.js"></script>
+<script src="${contextPath}/webapp/ressources/js/bootstrap.min.js"></script>
+<script src="${contextPath}/webapp/ressources/js/material.min.js"></script>
+<script src="${contextPath}/webapp/ressources/js/datetimepicker.js"></script>
+<script src="${contextPath}/webapp/ressources/js/ripples.min.js"></script>
+<script src="${contextPath}/webapp/ressources/DataTables/datatables.min.js"></script>
 <script>
 	$.material.init();
 	$('.datetimepicker').bootstrapMaterialDatePicker({time: false});
