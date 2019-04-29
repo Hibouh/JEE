@@ -1,4 +1,4 @@
-package com.annuaire.account.web;
+package com.annuaire.account.controller;
 
 import com.annuaire.account.model.User;
 import com.annuaire.account.service.SecurityService;
