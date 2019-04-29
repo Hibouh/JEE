@@ -44,14 +44,14 @@
 			<spring:bind path="firstName">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
 					<form:input type="firstName" path="firstName" class="form-control"
-						placeholder="FirstName"></form:input>
+						placeholder="First Name"></form:input>
 					<form:errors path="firstName"></form:errors>
 				</div>
 			</spring:bind>
 			<spring:bind path="lastName">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
 					<form:input type="lastName" path="lastName" class="form-control"
-						placeholder="LastName"></form:input>
+						placeholder="Last Name"></form:input>
 					<form:errors path="lastName"></form:errors>
 				</div>
 			</spring:bind>
