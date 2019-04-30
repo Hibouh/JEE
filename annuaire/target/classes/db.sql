@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `accounts`;
-USE `accounts`;
+CREATE DATABASE  IF NOT EXISTS `test`;
+USE `test`;
 --
 -- Table structure for table `role`
 --
@@ -36,6 +36,17 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
+CREATE TABLE `person` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `firstName` varchar(255) DEFAULT NULL,
+  `lastName` varchar(255) DEFAULT NULL,
+  `mail` varchar(255) DEFAULT NULL,
+  `site` varchar(255) DEFAULT NULL,
+  
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 --
 -- Table structure for table `user_role`
 --

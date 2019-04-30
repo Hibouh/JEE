@@ -40,7 +40,6 @@
 					<form:errors path="username"></form:errors>
 				</div>
 			</spring:bind>
-
 			<spring:bind path="firstName">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
 					<form:input type="firstName" path="firstName" class="form-control"
@@ -51,21 +50,21 @@
 			<spring:bind path="lastName">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
 					<form:input type="lastName" path="lastName" class="form-control"
-						placeholder="Last Name"></form:input>
+						placeholder="last Name"></form:input>
 					<form:errors path="lastName"></form:errors>
 				</div>
 			</spring:bind>
 			<spring:bind path="mail">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
-					<form:input type="mail" path="mail"
-						class="form-control" placeholder="Mail"></form:input>
+					<form:input type="mail" path="mail" class="form-control"
+						placeholder="Mail"></form:input>
 					<form:errors path="mail"></form:errors>
 				</div>
 			</spring:bind>
 			<spring:bind path="site">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
-					<form:input type="site" path="site"
-						class="form-control" placeholder="Site"></form:input>
+					<form:input type="site" path="site" class="form-control"
+						placeholder="Site"></form:input>
 					<form:errors path="site"></form:errors>
 				</div>
 			</spring:bind>

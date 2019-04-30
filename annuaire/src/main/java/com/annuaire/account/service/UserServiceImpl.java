@@ -1,5 +1,6 @@
 package com.annuaire.account.service;
 
+import com.annuaire.account.model.Person;
 import com.annuaire.account.model.User;
 import com.annuaire.account.repository.RoleRepository;
 import com.annuaire.account.repository.UserRepository;
@@ -8,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {

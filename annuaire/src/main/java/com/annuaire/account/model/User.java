@@ -16,6 +16,7 @@ public class User {
 	private String mail;
 	private String site;
     private Set<Role> roles;
+    //private Set<Person> person;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -52,6 +53,22 @@ public class User {
         this.passwordConfirm = passwordConfirm;
     }
 
+
+	/*public Set<Person> getPerson() {
+		return person;
+	}
+	@ManyToMany
+    @JoinTable(name = "user_person", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "person_id"))
+	public void setPerson(Set<Person> person) {
+		this.person = person;
+	}*/
+
+	@ManyToMany
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
     public String getFirstName() {
 		return firstName;
 	}
@@ -84,13 +101,7 @@ public class User {
 		this.site = site;
 	}
 
-	@ManyToMany
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
+	public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
 }
