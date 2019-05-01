@@ -32,7 +32,7 @@ CREATE TABLE `user` (
   `lastName` varchar(255) DEFAULT NULL,
   `mail` varchar(255) DEFAULT NULL,
   `site` varchar(255) DEFAULT NULL,
-  `birthday` varchar(255) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
   
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
