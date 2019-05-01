@@ -15,6 +15,7 @@ public class UserValidator implements Validator {
     @Autowired
     private UserService userService;
     EmailValidator emailValidator = new EmailValidator();
+    DateValidator dateValidator = new DateValidator();
     @Override
     public boolean supports(Class<?> aClass) {
         return User.class.equals(aClass);
@@ -49,11 +50,15 @@ public class UserValidator implements Validator {
         	errors.rejectValue("lastName", "Size.userForm.lastName");
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "mail", "NotEmpty");
-        if(!emailValidator.validateEmail(user.getMail()))
+        if(!emailValidator.isValidateEmail(user.getMail()))
         	errors.rejectValue("mail", "Form.userForm.mail");
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "site", "NotEmpty");
-        if(emailValidator.validateEmail(user.getMail()))
+        if(user.getSite().length()< 1)
         	errors.rejectValue("site", "Size.userForm.site");
+        
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "birthday", "NotEmpty");
+        if(!dateValidator.isValidDate(user.getBirthday()))
+        	errors.rejectValue("birthday", "Form.userForm.date");
     }
 }

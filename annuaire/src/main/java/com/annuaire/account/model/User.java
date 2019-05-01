@@ -2,6 +2,8 @@ package com.annuaire.account.model;
 
 
 import javax.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -15,6 +17,7 @@ public class User {
 	private String lastName;
 	private String mail;
 	private String site;
+	private String birthday;
     private Set<Role> roles;
     //private Set<Person> person;
 
@@ -104,4 +107,13 @@ public class User {
 	public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+	
 }

@@ -42,6 +42,7 @@
 			</spring:bind>
 			<spring:bind path="firstName">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
+					<form:label path="firstName" class="control-label">First Name</form:label>
 					<form:input type="firstName" path="firstName" class="form-control"
 						placeholder="First Name"></form:input>
 					<form:errors path="firstName"></form:errors>
@@ -49,6 +50,7 @@
 			</spring:bind>
 			<spring:bind path="lastName">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
+					<form:label path="lastName" class="control-label">Last Name</form:label>
 					<form:input type="lastName" path="lastName" class="form-control"
 						placeholder="last Name"></form:input>
 					<form:errors path="lastName"></form:errors>
@@ -56,6 +58,7 @@
 			</spring:bind>
 			<spring:bind path="mail">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
+					<form:label path="mail" class="control-label">mail</form:label>
 					<form:input type="mail" path="mail" class="form-control"
 						placeholder="Mail"></form:input>
 					<form:errors path="mail"></form:errors>
@@ -63,13 +66,24 @@
 			</spring:bind>
 			<spring:bind path="site">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
+					<form:label path="site" class="control-label">Site Web</form:label>
 					<form:input type="site" path="site" class="form-control"
 						placeholder="Site"></form:input>
 					<form:errors path="site"></form:errors>
 				</div>
 			</spring:bind>
+
+			<spring:bind path="birthday">
+				<div
+					class="form-group ${status.error ? 'has-error' : ''} label-floating">
+					<form:label path="birthday" class="control-label">Birthday</form:label>
+					<form:input path="birthday" class="form-control datetimepicker"></form:input>
+					<form:errors path="birthday"></form:errors>
+				</div>
+			</spring:bind>
 			<spring:bind path="password">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
+					<form:label path="password" class="control-label">Password</form:label>
 					<form:input type="password" path="password" class="form-control"
 						placeholder="Password"></form:input>
 					<form:errors path="password"></form:errors>
@@ -77,6 +91,7 @@
 			</spring:bind>
 			<spring:bind path="passwordConfirm">
 				<div class="form-group ${status.error ? 'has-error' : ''}">
+					<form:label path="passwordConfirm" class="control-label">Confirm Password</form:label>
 					<form:input type="password" path="passwordConfirm"
 						class="form-control" placeholder="Confirm your password"></form:input>
 					<form:errors path="passwordConfirm"></form:errors>
@@ -88,6 +103,7 @@
 
 	</div>
 	<!-- /container -->
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
