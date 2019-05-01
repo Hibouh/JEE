@@ -77,7 +77,7 @@
 				<div
 					class="form-group ${status.error ? 'has-error' : ''} label-floating">
 					<form:label path="birthday" class="control-label">Birthday</form:label>
-					<form:input path="birthday" class="form-control datetimepicker"></form:input>
+					<form:input type = "date" path="birthday" class="form-control datetimepicker"></form:input>
 					<form:errors path="birthday"></form:errors>
 				</div>
 			</spring:bind>
