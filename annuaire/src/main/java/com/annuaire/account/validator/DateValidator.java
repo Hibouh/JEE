@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class DateValidator {
 
 	// Email Regex java
-	private static final String DATE_REGEX = "^[0-3]?[0-9]-[0-3]?[0-9]-(?:[0-9]{2})?[0-9]{2}$";
+	private static final String DATE_REGEX = "^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$";
 
 	// static Pattern object, since pattern is fixed
 	private static Pattern pattern;

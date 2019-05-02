@@ -20,8 +20,15 @@ public class User {
 	private String birthday;
     private Set<Role> roles;
     //private Set<Person> person;
+    public User() {
+    	super();
+    }
+    public User(String string, String string2) {
+		this.firstName = string;
+		this.mail = string2;
+	}
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;

@@ -1,6 +1,8 @@
 package com.annuaire.account.controller;
 
 import com.annuaire.account.model.User;
+import com.annuaire.account.repository.RoleRepository;
+import com.annuaire.account.repository.UserRepository;
 import com.annuaire.account.service.SecurityService;
 import com.annuaire.account.service.UserService;
 import com.annuaire.account.validator.UserValidator;
@@ -19,7 +21,13 @@ public class UserController {
 
     @Autowired
     private SecurityService securityService;
-
+    
+    @Autowired
+    private UserRepository userRepository;
+    
+    @Autowired
+    private RoleRepository roleRepository;
+    
     @Autowired
     private UserValidator userValidator;
 
@@ -64,5 +72,17 @@ public class UserController {
     @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
     public String test(Model model) {
         return "test";
-    }
+    }   
+    
+    @RequestMapping(value = {"/listPerson","/listp"}, method = RequestMethod.GET)
+	public String listPerson(Model model) {
+    	model.addAttribute("listPerson",userRepository.findAll());
+		return "listPerson";
+	}
+    
+    @RequestMapping(value = {"/listGroup","/listg"}, method = RequestMethod.GET)
+	public String listGroup(Model model) {
+    	model.addAttribute("listGroup",roleRepository.findAll());
+		return "listGroup";
+	}
 }

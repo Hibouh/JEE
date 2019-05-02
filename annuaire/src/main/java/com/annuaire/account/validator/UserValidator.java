@@ -58,7 +58,7 @@ public class UserValidator implements Validator {
         	errors.rejectValue("site", "Size.userForm.site");
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "birthday", "NotEmpty");
-        if(!dateValidator.isValidDate(user.getBirthday()))
+        if(dateValidator.isValidDate(user.getBirthday()))
         	errors.rejectValue("birthday", "Form.userForm.date");
     }
 }
