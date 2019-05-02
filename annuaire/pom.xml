@@ -102,6 +102,7 @@
 			<artifactId>commons-validator</artifactId>
 			<version>${commons-validator.version}</version>
 		</dependency>
+		
 	</dependencies>
 	<build>
 		<plugins>
