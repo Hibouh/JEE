@@ -15,7 +15,7 @@
     <meta name="description" content="Gestionnaire d'annuaire pour l'université d'Aix-Marseille" />
     <meta name="author" content="Nicolas Léotier" />
 
-    <title>Annuaire AMU</title>
+    <title>Annuaire</title>
     
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
   	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons" />
@@ -35,6 +35,3 @@
 </head>
 
 <body>
-
-<div class="container">
-	<div class="well page active">

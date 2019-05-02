@@ -1,25 +1,8 @@
-		<div id="copyleft" class="text-center">dev by lapinou</div>
-    </div>
-</div>
-<!-- /container -->
-<script src="${contextPath}/js/jquery.min.js"></script>
-<script src="${contextPath}/js/moment.js"></script>
-<script src="${contextPath}/js/bootstrap.min.js"></script>
-<script src="${contextPath}/js/material.min.js"></script>
-<script src="${contextPath}/js/datetimepicker.js"></script>
-<script src="${contextPath}/js/ripples.min.js"></script>
-<script src="${contextPath}/DataTables/datatables.min.js"></script>
-<script>
-	$.material.init();
-	$('.datetimepicker').bootstrapMaterialDatePicker({time: false});
-	$(document).ready(function() {
-	    $('.table').DataTable( {
-            "ordering": false,
-            "language": {
-                "url": "${contextPath}/DataTables/french.json"
-            }
-        } );
-	} );
-</script>
+		<div id="copyleft" class="text-center">Dev by Lapinou</div>
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+
 </body>
 </html>
