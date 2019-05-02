@@ -12,8 +12,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Gestionnaire d'annuaire pour l'université d'Aix-Marseille" />
-    <meta name="author" content="Nicolas Léotier" />
+    <meta name="description" content="Annuaire" />
+    <meta name="author" content="" />
 
     <title>Annuaire</title>
     

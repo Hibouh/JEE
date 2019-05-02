@@ -1,7 +1,10 @@
 body {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #eee;
+}
+
+html, body, .container, .well {
+	min-height: 100%
 }
 
 .form-signin {
@@ -9,7 +12,6 @@ body {
     padding: 15px;
     margin: 0 auto;
 }
-
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
     margin-bottom: 10px;
@@ -45,4 +47,62 @@ body {
 
 .has-error {
     color: red
+}
+
+.after-datetimepicker {
+	margin: 0 0 0 0;
+}
+
+#welcomeTitles {
+	margin-top: 90px;
+	margin-bottom: 90px;
+}
+
+.navbar-brand.active {
+	color: inherit;
+    background-color: rgba(255,255,255,.1);
+}
+
+.dropdown-header a {
+	cursor: default;
+}
+
+.dropdown-header a:hover {
+	background-color: white!important;
+	color: #333!important;
+}
+
+.navbar .navbar-brand:hover {
+	background-color :rgba(255,255,255,.1)!important;
+}
+
+.navbar-nav > li:hover {
+	background-color :rgba(255,255,255,.1)!important;	
+}
+
+#copyleft {
+	font-size: 12px;
+	color: #9E9E9E;
+}
+
+.form-control[readonly] {
+	cursor: not-allowed;
+}
+
+.form-group .form-control[readonly], .form-control[readonly] {
+	background-image: none!important;
+}
+
+#notFound {
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.person-tr {
+	cursor: pointer;
+}
+
+#person-view {
+    margin-top: 30px;
+    margin-bottom: 100px;
 }
