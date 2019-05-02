@@ -3,7 +3,7 @@ package com.annuaire.account.validator;
 import com.annuaire.account.model.User;
 import com.annuaire.account.service.UserService;
 
-
+import org.apache.commons.validator.routines.UrlValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -16,6 +16,7 @@ public class UserValidator implements Validator {
     private UserService userService;
     EmailValidator emailValidator = new EmailValidator();
     DateValidator dateValidator = new DateValidator();
+    SiteValidator siteValidator = new SiteValidator();
     @Override
     public boolean supports(Class<?> aClass) {
         return User.class.equals(aClass);
@@ -24,7 +25,6 @@ public class UserValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         User user = (User) o;
-        
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty");
         if (user.getUsername().length() < 6 || user.getUsername().length() > 32) {
             errors.rejectValue("username", "Size.userForm.username");
@@ -42,20 +42,15 @@ public class UserValidator implements Validator {
             errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
         }
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "NotEmpty");
-        if(user.getFirstName().length()< 2)
-        	errors.rejectValue("firstName", "Size.userForm.firstName");
-        
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "NotEmpty");
-        if(user.getLastName().length()< 1)
-        	errors.rejectValue("lastName", "Size.userForm.lastName");
-        
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "mail", "NotEmpty");
         if(!emailValidator.isValidateEmail(user.getMail()))
         	errors.rejectValue("mail", "Form.userForm.mail");
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "site", "NotEmpty");
-        if(user.getSite().length()< 1)
-        	errors.rejectValue("site", "Size.userForm.site");
+        // Pour l'url complete https://www.test.com
+       /*if(!siteValidator.isValid(user.getSite()))
+        	errors.rejectValue("site", "Size.userForm.site");*/
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "birthday", "NotEmpty");
         if(dateValidator.isValidDate(user.getBirthday()))
