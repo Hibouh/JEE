@@ -1,0 +1,5 @@
+com.annuaire.controller
+com.annuaire.model
+com.annuaire.repository
+com.annuaire.service
+com.annuaire.validator

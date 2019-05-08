@@ -5,11 +5,10 @@
 <table style="width: 100%">
 	<thead>
 		<tr>
-			<th>id</th>
-			<th>Username</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Site Web</th>
+			<th>Groupe</th>
 			<c:choose>
 				<c:when test="${pageContext.request.userPrincipal.name != null}">
 					<th>Mail</th>
@@ -22,11 +21,10 @@
 	<tbody>
 		<c:forEach var="listPerson" items="${listPerson}">
 			<tr>
-				<td>${listPerson.getId() }</td>
-				<td>${listPerson.getUsername() }</td>
 				<td>${listPerson.getFirstName() }</td>
 				<td>${listPerson.getLastName() }</td>
 				<td>${listPerson.getSite()}</td>
+				<td>${listPerson.getRole()}</td>
 				<c:choose>
 					<c:when test="${pageContext.request.userPrincipal.name != null}">
 						<td>${listPerson.getMail() }</td>

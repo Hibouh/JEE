@@ -1,0 +1,11 @@
+package com.annuaire.service;
+/**
+ * 
+ * @author LE Dan
+ *
+ */
+public interface SecurityService {
+    String findLoggedInUsername();
+
+    void autologin(String username, String password);
+}

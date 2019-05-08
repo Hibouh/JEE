@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.annuaire.controller"},{"l":"com.annuaire.model"},{"l":"com.annuaire.repository"},{"l":"com.annuaire.service"},{"l":"com.annuaire.validator"}]

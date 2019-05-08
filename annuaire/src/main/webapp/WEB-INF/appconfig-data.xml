@@ -22,7 +22,7 @@
     <!-- Configure the entity manager factory bean -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.annuaire.account.model"/>
+        <property name="packagesToScan" value="com.annuaire.model"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
@@ -30,6 +30,7 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
+                <prop key="hbm2ddl.auto">update</prop>
             </props>
         </property>
     </bean>
@@ -48,6 +49,6 @@
       repository interfaces
     -->
 
-    <jpa:repositories base-package="com.annuaire.account.repository"/>
+    <jpa:repositories base-package="com.annuaire.repository"/>
 
 </beans>
